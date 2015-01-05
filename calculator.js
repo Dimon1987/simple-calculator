@@ -1,4 +1,6 @@
 var KeyPad = React.createClass({
+
+  // Render the keypad
   render: function() {
     var keys = [7,8,9,'+', 4,5,6, '-', 1,2,3, '/', 0, '.', '=', '*', 'Sq Root', 'Clear'];
 
@@ -11,10 +13,11 @@ var KeyPad = React.createClass({
           return typeof key === 'number' || key === '.' ? <span>{key}</span> : <span className={key === 'Clear' ? 'clear' : 'operator'} >{key}</span>;
         }) }
       </div>
-    ) 
+    );
   }
 });
 
+// Display output 
 var OutputScreen = React.createClass({
   render: function() {
     return( <div className="screen">{this.props.result}</div> );
@@ -54,15 +57,15 @@ var MainCal = React.createClass({
   },
 
   lightTheme: function() {
-    return { backgroundColor: '#ccc' }
+    return { backgroundColor: '#ccc' };
   },
 
   clearResult: function() {
-    this.setState({result: 0})
+    this.setState({result: 0});
   },
   
   changeTheme: function() {
-    this.state.theme === 'light' ? this.setState({theme : 'dark'}) : this.setState({theme : 'light'})
+    this.state.theme === 'light' ? this.setState({theme : 'dark'}) : this.setState({theme : 'light'});
   },
 
   setResult: function(event) {
@@ -87,13 +90,13 @@ var MainCal = React.createClass({
   render: function() {
     return (
       <div className="calculator" style={this.state.theme === 'light' ? this.lightTheme() : this.darkTheme()}>
-        <div className="top">
+        <div className="display-section">
           <span className="theme clear" onClick={this.changeTheme}>{this.state.theme}</span>
           <OutputScreen result={this.state.result}/>
         </div>
         <KeyPad onClick={this.setResult} />
       </div>
-    )
+    );
   }
 });
 

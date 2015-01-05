@@ -26,9 +26,9 @@
 	letter-spacing: 1px;
 }
 
-.keys, .top {overflow: hidden;}
+.keys, .display-section {overflow: hidden;}
 
-.keys span, .top span.theme {
+.keys span, .display-section span.theme {
 	float: left;
 	position: relative;
 	top: 0;
@@ -58,10 +58,10 @@
 }
 
 .keys span:hover {
-	font-size: 20px;
+	font-size: 19px;
 }
 
-.top span.theme:hover {
+.display-section span.theme:hover {
 	font-size: 19px;
 }
 
@@ -69,6 +69,6 @@
 	top: 4px;
 }
 
-.top span.theme:active {
+.display-section span.theme:active {
 	top: 4px;
 }
